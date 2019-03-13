@@ -229,3 +229,76 @@ let test2: Set = [myPlane2]
 
 //Optionnels
 
+let capitales = ["France" : "Paris", "USA" : "Washington", "Canada" : "Ottawa"]
+
+let capFrance: String? = capitales["France"]
+let capIrlande: Optional<String> = capitales["Irlande"]
+
+// Nil coalescing operator
+let capUK = capitales["UK"] ?? "No value"
+
+print(capFrance)
+print(capIrlande)
+
+var nilProperty: Int? = nil
+nilProperty = 5
+
+if capFrance != nil {
+    print(capFrance!)
+} else {
+    print("No value")
+}
+
+let capCanada = capitales["Canada"]
+if capCanada != nil {
+
+}
+
+if let capCanada = capitales["Canada"], let first = capCanada.first {
+    print(capCanada)
+} else {
+
+}
+
+let up = capFrance?.uppercased()
+
+import Foundation
+
+func downloadImage(from url: URL) -> String? {
+
+    guard !url.absoluteString.isEmpty else {
+        return nil
+    }
+
+    guard url.absoluteString.hasPrefix("https") else {
+        return nil
+    }
+
+    guard let host = url.host, let firstCharacter = host.first else {
+        return nil
+    }
+
+    // Important code
+    return host
+}
+
+
+class Truc {
+    var ttot: String?
+
+    func truc() {
+        var ttot = "Salut"
+
+        print(self.ttot)
+    }
+
+    func test(ttot: String) {
+        var ttot = ttot.uppercased()
+
+        print(ttot)
+    }
+}
+
+friends.append(contentsOf: ["Toto", "Titi", "Tata"])
+
+let subArray = friends[...4]
