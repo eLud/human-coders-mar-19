@@ -6,6 +6,8 @@ var version = 4.22575764653734736536
 var introductionYear: UInt = 2014
 var isAwesome = true
 
+isAwesome.toggle()
+
 let test: String
 
 if true {
@@ -90,7 +92,7 @@ class Bird: Animal {
     }
 }
 
-struct Plane {
+struct Plane: Hashable {
 
     let model: String
     var companyName: String
@@ -120,3 +122,110 @@ myPlane.flightHours = 5000
 
 myPlane.flightHours
 myPlane2.flightHours
+
+struct Point {
+    var x: Double
+    var y: Double
+}
+
+struct Size {
+    var width: Double
+    var height: Double
+
+    // get only computed property
+    var surface: Double {
+        return width * height
+    }
+}
+
+struct Rectangle {
+    var origin: Point
+    var size: Size
+
+    func setSize(forCenter newCenter: Point) {
+
+    }
+
+    //Get-Set Computed property
+    /// Modifiying this property moves the origin
+    var center: Point {
+        get {
+            let centerX = origin.x + size.width / 2
+            let centerY = origin.y + size.height / 2
+            return Point(x: centerX, y: centerY)
+        }
+        set(newCenter) {
+            let originX = newCenter.x - size.width / 2
+            let originY = newCenter.y - size.height / 2
+            origin = Point(x: originX, y: originY)
+        }
+    }
+}
+
+let size = Size(width: 10, height: 10)
+size.surface
+
+var rect = Rectangle(origin: Point(x: 0, y: 0), size: size)
+rect.center = Point(x: 10, y: 10)
+
+enum TypeDeBien: Int {
+    case flat = 10
+    case house = 20
+    case boat = 30
+    case mobileHome = 40
+
+    var stringValue: String {
+        switch self {
+        case .flat:
+            return " Appartement"
+        case .house:
+            return " Maison"
+        case .boat:
+            return " Péniche"
+        case .mobileHome:
+            return " Mobil-home"
+        }
+    }
+}
+
+let bien = TypeDeBien(rawValue: 10)
+bien?.rawValue
+bien?.stringValue
+enum Rooms {
+    case one, two
+}
+
+enum TypeBien {
+    case appartement(type: Rooms)
+}
+
+
+//Collections
+
+//Array : Collection typée dynamique ordonnée indexée
+
+var friends: [String] = ["Paul", "Pierre"]
+//let friends: Array<String> = ["Paul", "Pierre"]
+
+friends.append("Luc")
+friends[0] = "Toto"
+friends.first
+
+let reversed = friends.reversed()
+
+//Dictionary
+
+var capitale = [myPlane : 107956765]
+capitale[myPlane2] = 12345678
+capitale[myPlane2] = 1234567098765438
+
+capitale[myPlane2]
+
+//Set
+
+let mySet: Set = Set<String>(arrayLiteral: "France", "USA")
+
+let test2: Set = [myPlane2]
+
+//Optionnels
+
