@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Demo-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Deliveryy" customModuleProvider="target" sceneMemberID="viewController">
@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2l-it-0pN">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="1qV-ek-V5Q">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="675"/>
@@ -50,7 +50,7 @@
                                                         <rect key="frame" x="0.0" y="46" width="375" height="30"/>
                                                         <state key="normal" title="Button"/>
                                                         <connections>
-                                                            <segue destination="2hd-mv-S4T" kind="show" id="tn0-Me-QGf"/>
+                                                            <segue destination="2hd-mv-S4T" kind="show" identifier="greenScreen" id="tn0-Me-QGf"/>
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="E7c-Q7-TiX">
@@ -316,23 +316,79 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="dkZ-7Q-t6O"/>
+                    <navigationItem key="navigationItem" title="Demo" id="dkZ-7Q-t6O">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="zjj-kY-qo6">
+                            <connections>
+                                <action selector="test:" destination="BYZ-38-t0r" id="GQO-5e-eRv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cell" destination="i84-9V-KPG" id="J5G-Zr-7f4"/>
+                        <outlet property="nameTextField" destination="UZh-Nj-afh" id="yk0-Z6-1Jf"/>
+                        <outlet property="stack" destination="1qV-ek-V5Q" id="Vim-mC-8Ou"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="i84-9V-KPG">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="50"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="117" translatesAutoresizingMaskIntoConstraints="NO" id="9it-ua-r7K">
+                            <rect key="frame" x="8" y="8" width="224" height="34"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOa-IN-x6o">
+                                    <rect key="frame" x="0.0" y="7" width="58" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5h9-ai-W0T">
+                                    <rect key="frame" x="175" y="1.5" width="51" height="31"/>
+                                </switch>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="LwF-o4-ANA" firstAttribute="bottom" secondItem="9it-ua-r7K" secondAttribute="bottom" constant="8" id="2PX-ta-knB"/>
+                        <constraint firstItem="9it-ua-r7K" firstAttribute="top" secondItem="LwF-o4-ANA" secondAttribute="top" constant="8" id="QgR-0Z-4ll"/>
+                        <constraint firstItem="9it-ua-r7K" firstAttribute="leading" secondItem="LwF-o4-ANA" secondAttribute="leading" constant="8" id="Wcp-KS-tYw"/>
+                        <constraint firstItem="LwF-o4-ANA" firstAttribute="trailing" secondItem="9it-ua-r7K" secondAttribute="trailing" constant="8" id="tmv-GB-Vfa"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="LwF-o4-ANA"/>
+                </view>
             </objects>
             <point key="canvasLocation" x="933.60000000000002" y="131.78410794602701"/>
         </scene>
-        <!--View Controller-->
+        <!--Green View Controller-->
         <scene sceneID="ndC-rB-mF0">
             <objects>
-                <viewController id="2hd-mv-S4T" sceneMemberID="viewController">
+                <viewController id="2hd-mv-S4T" customClass="GreenViewController" customModule="Deliveryy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="toa-eu-W4p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ti-6W-4Pa">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMA-Vu-Etx">
+                                        <rect key="frame" x="146.5" y="280.5" width="82.5" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycj-Iu-ENQ">
+                                        <rect key="frame" x="44" y="146" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.3172995944" green="0.6601959074" blue="0.43328449409999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="EMA-Vu-Etx" firstAttribute="centerX" secondItem="5ti-6W-4Pa" secondAttribute="centerX" id="03d-7b-4WA"/>
+                                    <constraint firstItem="EMA-Vu-Etx" firstAttribute="centerY" secondItem="5ti-6W-4Pa" secondAttribute="centerY" id="J9r-rd-RYN"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.1549474891" blue="0.14006246859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -344,6 +400,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XBh-9h-m5F"/>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="dEJ-a4-z4n"/>
+                    <connections>
+                        <outlet property="bigLabel" destination="EMA-Vu-Etx" id="AFn-YR-MVR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HrU-M6-pn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,8 +414,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="A9E-Xu-Yo7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="d45-9L-L5d">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="d45-9L-L5d">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
