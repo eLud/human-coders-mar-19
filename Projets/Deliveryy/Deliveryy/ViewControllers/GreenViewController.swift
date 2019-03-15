@@ -17,10 +17,10 @@ class GreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let item = item else { fatalError("This class requires a menuItem") }
+//        guard let item = item else { fatalError("This class requires a menuItem") }
 
-        bigLabel.text = item.name
-        title = item.name
+        bigLabel.text = item?.name
+        title = item?.name
     }
     
 

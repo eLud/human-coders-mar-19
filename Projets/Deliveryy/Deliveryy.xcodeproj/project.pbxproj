@@ -12,6 +12,7 @@
 		333396662239224A00636749 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 333396642239224A00636749 /* Main.storyboard */; };
 		333396682239224B00636749 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 333396672239224B00636749 /* Assets.xcassets */; };
 		3333966B2239224B00636749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 333396692239224B00636749 /* LaunchScreen.storyboard */; };
+		336148FA223BB637000B6732 /* TableDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336148F9223BB637000B6732 /* TableDemoViewController.swift */; };
 		33A068C3223AA05B005B64BB /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068C2223AA05B005B64BB /* MenuItem.swift */; };
 		33A068C5223AA0B9005B64BB /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068C4223AA0B9005B64BB /* Restaurant.swift */; };
 		33A068C9223AA6BB005B64BB /* GreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33A068C8223AA6BB005B64BB /* GreenViewController.swift */; };
@@ -25,6 +26,7 @@
 		333396672239224B00636749 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3333966A2239224B00636749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3333966C2239224B00636749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		336148F9223BB637000B6732 /* TableDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDemoViewController.swift; sourceTree = "<group>"; };
 		33A068C2223AA05B005B64BB /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		33A068C4223AA0B9005B64BB /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		33A068C8223AA6BB005B64BB /* GreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		33A068C7223AA0D9005B64BB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				336148F9223BB637000B6732 /* TableDemoViewController.swift */,
 				333396622239224A00636749 /* ViewController.swift */,
 				33A068C8223AA6BB005B64BB /* GreenViewController.swift */,
 			);
@@ -164,6 +167,7 @@
 				33A068C3223AA05B005B64BB /* MenuItem.swift in Sources */,
 				333396632239224A00636749 /* ViewController.swift in Sources */,
 				333396612239224A00636749 /* AppDelegate.swift in Sources */,
+				336148FA223BB637000B6732 /* TableDemoViewController.swift in Sources */,
 				33A068C9223AA6BB005B64BB /* GreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

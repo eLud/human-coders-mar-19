@@ -27,6 +27,7 @@ class Restaurant {
     }
 
     func remove(menuItem: MenuItem) {
-        fatalError("NOT IMPLEMENTED!!")
+        guard let index = menu.firstIndex(of: menuItem) else { return }
+        menu.remove(at: index)
     }
 }

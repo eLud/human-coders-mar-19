@@ -10,7 +10,7 @@ import Foundation
 
 struct MenuItem {
 
-    enum Category {
+    enum Category: Int {
         case first, main, desert, drink
     }
 
@@ -31,4 +31,30 @@ struct MenuItem {
         self.isVegan = isVegan
         self.isGlutenFree = isGlutenFree
     }
+}
+
+extension MenuItem: CustomStringConvertible {
+    var description: String {
+        return "Item name : \(name)"
+    }
+}
+
+extension MenuItem: Equatable {
+    static func ==(lhs : MenuItem, rhs: MenuItem) -> Bool {
+        return lhs.name == rhs.name
+    }
+}
+
+extension MenuItem: Comparable {
+    static func < (lhs: MenuItem, rhs: MenuItem) -> Bool {
+        return lhs.price < rhs.price
+    }
+}
+
+extension MenuItem: Codable {
+
+}
+
+extension MenuItem.Category : Codable {
+    
 }
