@@ -21,17 +21,44 @@ class GreenViewController: UIViewController {
 
         bigLabel.text = item?.name
         title = item?.name
+
+        demoEncodage()
     }
     
 
-    /*
-    // MARK: - Navigation
+    private func demoEncodage() {
+        let resto = Restaurant(name: "McDo")
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        for i in 0...10 {
+            let item = MenuItem(name: "Menu Hamburger \(i)", details: "Ne pas manger", price: 5, category: .main, isVegan: false, isGlutenFree: false)
+            resto.add(item)
+        }
+
+        let jsonEncoder = JSONEncoder()
+        let plistEncoder = PropertyListEncoder()
+        plistEncoder.outputFormat = .xml
+
+        if let jsonData = try? jsonEncoder.encode(resto) {
+            print(String(data: jsonData, encoding: .utf8)!)
+        }
+
+        if let plistData = try? plistEncoder.encode(resto) {
+            print(String(data: plistData, encoding: .utf8)!)
+
+            var documents = urlDossierDocuments()
+            documents.appendPathComponent("data")
+            documents.appendPathExtension("plist")
+
+            print(documents)
+            try? plistData.write(to: documents)
+        }
     }
-    */
 
+    private func urlDossierDocuments() -> URL {
+
+        let fm = FileManager.default
+        let url = fm.urls(for: .documentDirectory, in: .userDomainMask).first!
+
+        return url
+    }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Restaurant {
+class Restaurant: Codable {
 
     let name: String
     private var menu: [MenuItem]

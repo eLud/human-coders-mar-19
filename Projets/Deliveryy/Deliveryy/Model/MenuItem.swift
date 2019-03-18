@@ -10,7 +10,7 @@ import Foundation
 
 struct MenuItem {
 
-    enum Category: Int {
+    enum Category: String {
         case first, main, desert, drink
     }
 
@@ -51,10 +51,6 @@ extension MenuItem: Comparable {
     }
 }
 
-extension MenuItem: Codable {
+extension MenuItem: Codable { }
 
-}
-
-extension MenuItem.Category : Codable {
-    
-}
+extension MenuItem.Category : Codable { }
